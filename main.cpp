@@ -4,7 +4,7 @@ int main()
 {
     using namespace Main;
 
-    GameService* game_service = new GameService();
+    auto* game_service = new GameService();
     game_service->ignite();
 
     while (game_service->isRunning())
@@ -12,6 +12,6 @@ int main()
         game_service->update();
         game_service->render();
     }
-
+    delete game_service;
     return 0;
 }

@@ -50,6 +50,16 @@ add_executable(snake_game main.cpp
         source/UI/UIElement/TextView.cpp
         include/UI/UIElement/UIView.h
         source/UI/UIElement/UIView.cpp
+        source/Level/LevelModel.cpp
+        include/Level/LevelModel.h
+        source/Level/LevelView.cpp
+        include/Level/LevelView.h
+        source/Level/LevelController.cpp
+        include/Level/LevelController.h
+        source/Level/LevelService.cpp
+        include/Level/LevelService.h
+        include/Level/LevelNumber.h
+        include/Level/LevelData.h
 )
 target_compile_features(snake_game PRIVATE cxx_std_17)
 target_link_libraries(snake_game PRIVATE sfml-graphics sfml-audio)
