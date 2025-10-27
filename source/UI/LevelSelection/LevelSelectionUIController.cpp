@@ -6,6 +6,7 @@
 
 #include "../../../include/Global/Config.h"
 #include "../../../include/Global/ServiceLocator.h"
+#include "../../../include/Main/GameService.h"
 #include "../../../include/UI/UIElement/ImageView.h"
 #include "../../../include/UI/UIElement/ButtonView.h"
 
@@ -88,11 +89,16 @@ namespace UI::LevelSelection {
     }
 
     void LevelSelectionUIController::singleLinkedButtonCallback() {
+        Main::GameService::setGameState(Main::GameState::GAMEPLAY);
+        Global::ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::ONE);
     }
 
     void LevelSelectionUIController::doubleLinkedButtonCallback() {
+        Main::GameService::setGameState(Main::GameState::GAMEPLAY);
+        Global::ServiceLocator::getInstance()->getLevelService()->createLevel(Level::LevelNumber::TWO);
     }
 
     void LevelSelectionUIController::menuButtonCallback() {
+        Main::GameService::setGameState(Main::GameState::MAIN_MENU);
     }
 } // LevelSelection
