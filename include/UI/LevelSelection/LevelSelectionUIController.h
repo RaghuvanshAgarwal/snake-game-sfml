@@ -23,6 +23,7 @@ namespace UI::LevelSelection {
         const float level_two_button_y_position = 700.f;
         const float menu_button_y_position = 900.f;
 
+        const float background_alpha = 85.f;
 
         UIElement::ImageView* background_image = nullptr;
         UIElement::ButtonView* level_one_button = nullptr;
@@ -37,13 +38,12 @@ namespace UI::LevelSelection {
         void initializeButtons() const;
 
         void registerButtonCallbacks();
-        void singleLinkedButtonCallback();
-        void doubleLinkedButtonCallback();
+        void levelOneButtonCallback();
+        void levelTwoButtonCallback();
         void menuButtonCallback();
 
     public:
         LevelSelectionUIController(); // Default constructor
-
         ~LevelSelectionUIController() override; // Destructor
 
         void initialize() override; // To be called when the object is created

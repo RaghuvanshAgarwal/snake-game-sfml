@@ -12,6 +12,8 @@ namespace Level {
     using namespace Global;
 
     LevelView::LevelView() {
+        background_rectangle = new RectangleShapeView();
+        border_rectangle = new RectangleShapeView();
     }
 
     LevelView::~LevelView() {
@@ -46,7 +48,6 @@ namespace Level {
     void LevelView::initializeBackground() {
         const sf::RenderWindow* window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
         const auto size = static_cast<sf::Vector2f>(window->getSize());
-        background_rectangle = new RectangleShapeView();
         background_rectangle->initialize(size,{0,0},0,background_color);
         background_rectangle->show();
     }
@@ -60,7 +61,6 @@ namespace Level {
     void LevelView::initializeBorder() {
         const auto border_size = sf::Vector2f(grid_width, grid_height);
         const auto border_position = sf::Vector2f(border_offset_left, border_offset_top);
-        border_rectangle = new RectangleShapeView();
         border_rectangle->initialize(border_size,border_position,border_thickness,sf::Color::Transparent, border_color );
         border_rectangle->show();
     }

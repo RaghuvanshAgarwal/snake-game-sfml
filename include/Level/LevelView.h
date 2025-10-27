@@ -16,7 +16,7 @@ namespace Level {
 
     class LevelView {
         const sf::Color background_color = sf::Color(180,200,160);
-        sf::Color border_color = sf::Color::Black;
+        const sf::Color border_color = sf::Color::Black;
 
         UI::UIElement::RectangleShapeView* background_rectangle;
         UI::UIElement::RectangleShapeView* border_rectangle;
@@ -25,8 +25,8 @@ namespace Level {
         float grid_height = 0.f;
 
         void initializeBackground();
-        void calculateGridExtents();
         void initializeBorder();
+        void calculateGridExtents();
 
         public:
         static constexpr int border_thickness = 10;
