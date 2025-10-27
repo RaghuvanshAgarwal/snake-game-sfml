@@ -5,6 +5,7 @@
 #include "../Sound/SoundService.h"
 #include "../Time/TimeService.h"
 #include "../Level/LevelService.h"
+#include "../Player/PlayerService.h"
 
 
 namespace Global
@@ -18,6 +19,7 @@ namespace Global
         UI::UIService* ui_service;
         Time::TimeService* time_service;
         Level::LevelService* level_service;
+        Player::PlayerService* player_service;
 
         ServiceLocator();
         ~ServiceLocator();
@@ -38,6 +40,7 @@ namespace Global
         UI::UIService* getUIService() const;
         Time::TimeService* getTimeService() const;
         Level::LevelService *getLevelService() const;
+        Player::PlayerService *getPlayerService() const;
 
         void deleteServiceLocator() const;
     };

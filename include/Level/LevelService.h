@@ -15,6 +15,7 @@ namespace Level {
 
         void createLevelController();
         void destroy() const;
+        void spawnPlayer();
 
         public:
         LevelService(); // Default constructor
