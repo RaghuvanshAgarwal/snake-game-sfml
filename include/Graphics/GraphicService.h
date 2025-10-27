@@ -10,7 +10,7 @@ namespace Graphics
 
 		const std::string game_window_title = "Outscal Presents - Snake Game";
 
-		const int game_window_width = 1920;
+		const int game_window_width = 1980;
 		const int game_window_height = 1080;
 
 		const sf::Color window_color = sf::Color(200, 200, 0, 255);
