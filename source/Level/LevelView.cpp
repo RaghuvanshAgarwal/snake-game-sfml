@@ -12,7 +12,6 @@ namespace Level {
     using namespace Global;
 
     LevelView::LevelView() {
-        initialize();
     }
 
     LevelView::~LevelView() {

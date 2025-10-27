@@ -11,7 +11,6 @@ namespace Level {
     LevelController::LevelController() {
         level_view = new LevelView();
         level_model = new LevelModel();
-        initialize();
     }
 
     LevelController::~LevelController() {

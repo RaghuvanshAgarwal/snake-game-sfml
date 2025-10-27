@@ -60,6 +60,8 @@ add_executable(snake_game main.cpp
         include/Level/LevelService.h
         include/Level/LevelNumber.h
         include/Level/LevelData.h
+        source/UI/LevelSelection/LevelSelectionUIController.cpp
+        include/UI/LevelSelection/LevelSelectionUIController.h
 )
 target_compile_features(snake_game PRIVATE cxx_std_17)
 target_link_libraries(snake_game PRIVATE sfml-graphics sfml-audio)
