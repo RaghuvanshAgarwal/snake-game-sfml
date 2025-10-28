@@ -54,8 +54,8 @@ namespace Level {
 
     void LevelView::calculateGridExtents() {
         const sf::RenderWindow* window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
-        grid_width = static_cast<float>(window->getSize().x) - ((border_offset_left + border_thickness) * 2);
-        grid_height = static_cast<float>(window->getSize().y) - ((border_offset_top + border_thickness) * 2);
+        grid_width = static_cast<float>(window->getSize().x) - border_offset_left * 2;
+        grid_height = static_cast<float>(window->getSize().y) - border_offset_top * 2;
     }
 
     void LevelView::initializeBorder() {
