@@ -67,8 +67,6 @@ add_executable(snake_game main.cpp
         source/Player/SnakeController.cpp
         include/Player/SnakeController.h
         include/Player/Direction.h
-        source/Player/BodyPart.cpp
-        include/Player/BodyPart.h
 )
 target_compile_features(snake_game PRIVATE cxx_std_17)
 target_link_libraries(snake_game PRIVATE sfml-graphics sfml-audio)
