@@ -6,6 +6,7 @@
 
 #include "../../include/Global/Config.h"
 #include "../../include/Global/ServiceLocator.h"
+#include "../../include/Level/LevelView.h"
 #include "../../include/UI/UIElement/ImageView.h"
 
 namespace Player {
@@ -14,7 +15,7 @@ namespace Player {
         body_part_image = new ImageView();
     }
 
-    void BodyPart::initializeBodyPartImage() {
+    void BodyPart::initializeBodyPartImage() const {
         body_part_image->initialize(Global::Config::snake_body_texture_path, body_part_width,body_part_height,getBodyPartScreenPosition());
         body_part_image->setCentreAlinged();
     }
@@ -44,7 +45,33 @@ namespace Player {
         body_part_image->render();
     }
 
-    sf::Vector2f BodyPart::getBodyPartScreenPosition() {
-        Global::ServiceLocator::getInstance()->getLevelService()->
+    void BodyPart::setDirection(const Direction dir) {
+        direction = dir;
+    }
+
+    void BodyPart::updatePosition() {
+        body_part_image->setPosition(getBodyPartScreenPosition());
+        body_part_image->setRotation(getRotationAngle());
+        body_part_image->update();
+    }
+
+    sf::Vector2f BodyPart::getBodyPartScreenPosition() const {
+        float x = Level::LevelView::border_offset_left + (grid_position.x * body_part_width) + (body_part_width * 0.5f);
+        float y = Level::LevelView::border_offset_top + (grid_position.y * body_part_height) + (body_part_height * 0.5f);
+        return sf::Vector2f(x, y);
+    }
+
+    float BodyPart::getRotationAngle() const {
+        switch (direction) {
+            default:
+            case Direction::UP:
+                return 270;
+            case Direction::DOWN:
+                return 90;
+            case Direction::LEFT:
+                return 180;
+            case Direction::RIGHT:
+                return 0;
+        }
     }
 } // Player

@@ -19,9 +19,10 @@ namespace Player {
         float body_part_width = 0.f;
         float body_part_height = 0.f;
 
+        [[nodiscard]] sf::Vector2f getBodyPartScreenPosition() const;
+        [[nodiscard]] float getRotationAngle() const;
         void createBodyPartImage();
-        sf::Vector2f getBodyPartScreenPosition();
-        void initializeBodyPartImage();
+        void initializeBodyPartImage() const;
 
     public:
         BodyPart(); // Default constructor
@@ -29,6 +30,9 @@ namespace Player {
         void initialize(float width,float height, sf::Vector2i pos, Direction dir);
         void update();
         void render() const; // To be called on every frame
+
+        void setDirection(Direction dir);
+        void updatePosition();
     };
 } // Player
 
